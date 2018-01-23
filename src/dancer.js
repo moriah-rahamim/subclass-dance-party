@@ -5,7 +5,7 @@ var Dancer = function(top, left, timeBetweenSteps) {
     this.top = top;
     this.left = left;
     this.setPosition(top, left);
-
+    // this.step();
 };
 
   Dancer.prototype.step = function() {

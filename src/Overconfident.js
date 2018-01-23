@@ -14,6 +14,4 @@ OverconfidentDancer.prototype.step = function() {
 
     this.$node.css("transition", `border ${this.timeBetweenSteps}ms`);
     this.$node.css("border-width", `${rand}px`);
-    this.$node.css("border-radius", `${rand}px`);
-
 };
