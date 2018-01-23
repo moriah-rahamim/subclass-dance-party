@@ -19,4 +19,5 @@ var Dancer = function(top, left, timeBetweenSteps) {
     };
     this.$node.css(styleSettings);
   };
+  //Second
 
