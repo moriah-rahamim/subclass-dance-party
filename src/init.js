@@ -23,7 +23,6 @@ $(document).ready(function() {
       let currentHeight = spacing;
       window.dancers.forEach(ele => {
           ele.left = 0;
-          // ele.$node.css('transition','left 1s');
           ele.$node.css('left','0px');
           ele.top = currentHeight;
           ele.$node.css('transition','top 1s');
