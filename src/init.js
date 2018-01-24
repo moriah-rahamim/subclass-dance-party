@@ -1,12 +1,11 @@
 $(document).ready(function() {
   window.dancers = [];
 
-  $('.addDancerButton').on('click', function(event) {
+  $('body').on('click', '.addDancerButton', function(event) {
     var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
+
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
-    // make a dancer with a random position
-    console.log(dancerMakerFunction);
     var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
