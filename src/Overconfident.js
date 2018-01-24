@@ -3,6 +3,7 @@ var OverconfidentDancer = function(top, left) {
     // note to self: perhaps add a minimum time later
     Dancer.call(this, top, left, timeBetweenSteps);
     this.$node.addClass('overconfident');
+    this.confidenceAdjustment = 0;
 };
 
 OverconfidentDancer.prototype = Object.create(Dancer.prototype);
@@ -32,6 +33,8 @@ OverconfidentDancer.prototype.absorbNeighbors = function() {
                 // remove the other dancer
                 ele.$node.hide();
                 window.dancers.splice(idx, 1);
+                this.confidenceAdjustement += 200;
+                // this.$node.css('border-width', confidentWidth + 5 +'px')
             }
 
         }
@@ -39,7 +42,7 @@ OverconfidentDancer.prototype.absorbNeighbors = function() {
 }
 OverconfidentDancer.prototype.step = function() {
     Dancer.prototype.step.call(this);
-    let rand = Math.random() * 100;
+    let rand = Math.random() * 100 + this.confidenceAdjustment;
 
     this.$node.css("transition", `border ${this.timeBetweenSteps}ms`);
     this.$node.css("border-width", `${rand}px`);
