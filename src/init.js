@@ -29,6 +29,16 @@ $(document).ready(function() {
           currentHeight += spacing;
       })
   })
+    $('.danceParty').on('click', function() {
+        let rand = Math.random() * 500;
+        for(let i = 0; i < rand; i++) {
+            $('.blinkyButton').trigger('click');
+            $('.rainbowButton').trigger('click');
+            if (i % 5 === 0) {
+                $('.overconfidentButton').trigger('click');
+            }
+        }
+    })
 
 });
 

@@ -27,9 +27,9 @@ window.OverconfidentDancer = class OverconfidentDancer extends Dancer {
                 );
                 if (distanceBetween < (dancerWidth + confidentWidth)) {
                     // remove the other dancer
-                    ele.$node.hide();
+                    ele.$node.remove();
                     window.dancers.splice(idx, 1);
-                    this.confidenceAdjustement += 200;
+                    this.confidenceAdjustment += 5;
                     // this.$node.css('border-width', confidentWidth + 5 +'px')
                 }
 
